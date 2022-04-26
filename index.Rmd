@@ -25,25 +25,56 @@ knitr::include_graphics("image/Intro 1.png")
 
 Link = https://lospinarozo.github.io/PrettyCoolBeetlesCodeAndData/ 
 
+<br>
+<br>
+<br>
 
 # Rationale
 
+<br>
+
 Why is it useful to include a link to your code in your manuscript from the first time you submit? 
 
-1) Best way to make your science more transparent  
+<br>
 
-2) You can make your science more accessible to other scientists  
+1) Best way to make your science <span style="color: #f6781d">**more transparent**</span> 
 
-3) Your reviewers have easy access to your code. This is useful for them to understand your rationale and stats  
+<br>
 
-4) Even if you have to make changes to your code, the link remains the same. And you will always have a history of the changes.  
+2) You can make your science more <span style="color: #00a68d">**accesible**</span> to other scientists  
 
-5) The most important reason: To really show your work!!!  
+<br>
 
-The paper is just the tip of the iceberg, what about those thousands  lines of code you had to do to get there? Do not let them go unnoticed!
+3) <span style="color: #db9622">**Your reviewers can see**</span> your code. This is useful for them to understand the rationale for your stats  
 
+<br>
+
+4) When you make changes to your code, <span style="color: #26bed9">**The link remains the same**</span> but readers can see the version history.  
+
+<br>
+
+5) The most important reason: to really <span style="color: #da0728">**Show your work**</span>
+
+<br>
+<br>
+<br>
+
+```{r, echo = FALSE, out.width = '100%'}
+knitr::include_graphics("image/Gru meme.jpg")
+```
+
+<br>
+<br>
+
+The paper is **just the tip of the iceberg**, what about those thousands  lines of code you had to do to get there? Here are some tips so they do not go unnoticed!
+
+<br>
+<br>
 
 # Let's get to it!
+
+<br>
+<br>
 
 1. [Workshop 1: Github](workshopGithub.html) 
 
