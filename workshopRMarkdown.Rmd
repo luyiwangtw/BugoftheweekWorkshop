@@ -1,0 +1,7 @@
+---
+title: "Workshop 2: RMarkdown"
+author: "Bug of the week"
+date: "4/25/2022"
+output: html_document
+---
+Workshop 2: RMarkdown

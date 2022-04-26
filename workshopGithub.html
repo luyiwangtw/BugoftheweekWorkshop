@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+<meta name="author" content="Bug of the week" />
+
+
+<title>Basic guide to set up and use GitHub</title>
+
+<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/navigation-1.1/codefolding.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+<style type="text/css">
+.code-folding-btn { margin-bottom: 4px; }
+</style>
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html"></a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Introduction</a>
+</li>
+<li>
+  <a href="workshopGithub.html">Workshop 1: Github</a>
+</li>
+<li>
+  <a href="workshopRMarkdown.html">Workshop 2: RMarkdown</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+<div class="btn-group pull-right float-right">
+<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<ul class="dropdown-menu dropdown-menu-right" style="min-width: 50px;">
+<li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
+<li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
+</ul>
+</div>
+
+
+
+<h1 class="title toc-ignore">Basic guide to set up and use GitHub</h1>
+<h4 class="author">Bug of the week</h4>
+<h4 class="date">4/25/2022</h4>
+
+</div>
+
+
+<div id="setting-up" class="section level1">
+<h1>Setting up</h1>
+<ol style="list-style-type: decimal">
+<li>Open an account in GitHub: <a href="https://github.com/signup?source=login" class="uri">https://github.com/signup?source=login</a></li>
+<li>Download GitHub desktop App: <a href="https://desktop.github.com/" class="uri">https://desktop.github.com/</a></li>
+<li>Link your desktop app to your GitHub account:</li>
+</ol>
+<p>Open GitHub desktop and click sign in to GitHub.com:</p>
+<p><img src="image/figure%201.png" width="100%" /></p>
+<p>Then, introduce your log in details if the app asks for them (if you are already logged in in your browser, the app would probably fill everything automatically). Then, authorize the application to open with GitHub Desktop.</p>
+<p>The following window will pop up:</p>
+<div class="figure">
+<img src="image/figure%202.png" alt="click finish" width="100%" />
+<p class="caption">
+click finish
+</p>
+</div>
+<ol start="4" style="list-style-type: decimal">
+<li>Request access to the Lab organization: “bugoftheweek”</li>
+</ol>
+<p>Once you have completed these steps, send your GitHub username and email address to <a href="mailto:amandaf@unimelb.edu.au" class="email">amandaf@unimelb.edu.au</a> so that we can invite you the lab organization: “bugoftheweek”.</p>
+</div>
+<div id="general-comments" class="section level1">
+<h1>General Comments</h1>
+<p>There are many ways to do the same thing in GitHub, we will give you our favourite (easy + fast), but you can explore others if you want.</p>
+</div>
+<div id="terminology" class="section level1">
+<h1>Terminology</h1>
+<p><strong>Repository</strong>: One project. It can contain multiple scripts and data sets. <br> <strong>Clone</strong>: Copy a repository to your computer so you can work on it. <br> <strong>Template</strong>: A repository that contains useful code. You can clone it and modify it for your own project. Even if you clone a repository, the changes will not affect the original. <br> <strong>Push</strong>: Upload your change sin GitHub. <br> <strong>Pull</strong>: Download any changes you (or anybody else) did in a repository you have already cloned. i.e. Download form the internet to your computer. <br></p>
+</div>
+<div id="three-different-situations-to-use-git-hub" class="section level1">
+<h1>Three different situations to use Git-Hub</h1>
+<div id="scenario-1-upload-a-repository-that-you-created-on-your-own-github-account" class="section level2">
+<h2>Scenario 1: Upload a repository that you created on your own GitHub account</h2>
+<p><em>This scenario will be useful if you already have a project for one of your papers and want to share your code with the world.</em></p>
+<div id="go-to-r-studio-and-assign-a-project-to-your-script" class="section level3">
+<h3>1.1 Go to R studio and assign a project to your script</h3>
+<p>Note: You may have already assigned a project, if at the beginning, you started by creating a new project instead of just a new script.</p>
+<div class="figure">
+<img src="image/figure%203.png" alt="In the upper right corner click in the arrow to display the dropdown menu. Click on “New Project”." width="50%" />
+<p class="caption">
+In the upper right corner click in the arrow to display the dropdown menu. Click on “New Project”.
+</p>
+</div>
+<div class="figure">
+<img src="image/figure%204.png" alt="Follow the prompts: New directory – New Project -Add name and location" width="50%" />
+<p class="caption">
+Follow the prompts: New directory – New Project -Add name and location
+</p>
+</div>
+<p>Note: Do not select “create a git repository”. It is possible to do it this way, but it is longer. And click “Accept”.</p>
+</div>
+<div id="create-a-new-repository-from-github-desktop" class="section level3">
+<h3>1.2 Create a new repository from GitHub Desktop</h3>
+<div class="figure">
+<img src="image/figure%205.png" alt="Open GitHub Desktop" width="100%" />
+<p class="caption">
+Open GitHub Desktop
+</p>
+</div>
+<div class="figure">
+<img src="image/figure%206.png" alt="Both paths will lead to this pop up" width="50%" />
+<p class="caption">
+Both paths will lead to this pop up
+</p>
+</div>
+<div class="figure">
+<img src="image/figure%207.png" alt="Choose the directory where you have your project. And click on “create repository”. Then this windwo will appear" width="100%" />
+<p class="caption">
+Choose the directory where you have your project. And click on “create repository”. Then this windwo will appear
+</p>
+</div>
+<div class="figure">
+<img src="image/figure%208.png" alt="Next, your app would look like this" width="100%" />
+<p class="caption">
+Next, your app would look like this
+</p>
+</div>
+<p>Click publish repository, and that is it! It will be uploaded to your GitHub.</p>
+</div>
+<div id="push-your-local-changes-to-github" class="section level3">
+<h3>1.3 Push your local changes to GitHub</h3>
+<p>Any time you make changes in your code in your local folder, they will appear on the left-hand panel. When you are ready, write a small summary and description of your changes so that people know why this was required and then push them to GitHub by selecting “Commit to main”</p>
+<div class="figure">
+<img src="image/figure%209.png" alt="Next, your app would look like this" width="100%" />
+<p class="caption">
+Next, your app would look like this
+</p>
+</div>
+</div>
+<div id="continue-working-on-your-file" class="section level3">
+<h3>1.4 Continue working on your file</h3>
+<p>From now on, it will be super easy to upload your local changes to your GitHub.com. Just hit “commit to main” after you are happy with your changes.</p>
+<p><strong>Important!!!</strong> Always pull origin before start working on any repository. In this way you first download the latest version online, then combine that with your local changes. Here is an example:</p>
+<div class="figure">
+<img src="image/figure%2010.png" alt="Always click “fetch origin” before making any changes in your local file." width="100%" />
+<p class="caption">
+Always click “fetch origin” before making any changes in your local file.
+</p>
+</div>
+<div class="figure">
+<img src="image/figure%2011.png" alt="After clicking “fetch origin”, the desktop app detected that there were two changes online, so you need to select “Pull origin” and then work on that last version." width="100%" />
+<p class="caption">
+After clicking “fetch origin”, the desktop app detected that there were two changes online, so you need to select “Pull origin” and then work on that last version.
+</p>
+</div>
+<hr />
+<p><em>Parenthesis for troubleshooting</em> <br> It can happen that you and your collaborator worked on the file at the same time. In this case, you would need to commit your changes, then pull and then resolve the mismatches selecting what to keep. However, this is a bit more complicated. One option is to type this line in your console:</p>
+<p><img src="image/figure%2012.png" width="100%" /></p>
+<p>GitHub Desktop will ask you if you want to open with R. Say yes, and it will show you the conflicts.</p>
+<p><img src="image/figure%2013.png" width="100%" /></p>
+<p>Resolve the conflicts, save the file and push to your GitHub. Hopefully that is not necessary</p>
+<p><em>End of the troubleshooting</em></p>
+<hr />
+</div>
+<div id="tracking-changes" class="section level3">
+<h3>1.5 Tracking Changes</h3>
+<p>Click on “Fetch Origin” and then “History” to see the changes from your collaborators or the ones you did on your GitHub.com</p>
+<p><img src="image/figure%2014.png" width="100%" /></p>
+<p>And when you open the file in your computer you can be sure all the merging has been done automatically and your file has all the remote changes already included. 😊</p>
+</div>
+</div>
+<div id="scenario-2-use-a-template-repository-from-bugoftheweek" class="section level2">
+<h2>Scenario 2: Use a template repository from “bugoftheweek”</h2>
+<p><em>This scenario will be useful if you are new to a topic and want to use already existent code to apply to your project. We have got your back!</em></p>
+<div id="select-your-template" class="section level3">
+<h3>2.1 Select your template</h3>
+<p>Got to your GitHub.com. By this time you probably have been added to “bugoftheweek”. On the left-hand panel, under your profile photo, find the title “Organizations” and click on the picture. We have divided the repositories according to your topics of interest. Click on the one you need, and then click on the button “Use this template”.</p>
+<p><img src="image/figure%2015.png" width="100%" /></p>
+<div class="figure">
+<img src="image/figure%2016.png" alt="You will see this screen" width="100%" />
+<p class="caption">
+You will see this screen
+</p>
+</div>
+<p>(Note: this is an example from another repository, Statistics) Make sure you change the “owner” to your own username. Add a name for this repository and click “Create repository from template”</p>
+</div>
+<div id="clone-this-template-to-work-on-it-from-your-computer" class="section level3">
+<h3>2.2 Clone this template to work on it from your computer</h3>
+<p>Go to GitHub desktop. Select File - Clone repository - Select the one you want to work on and indicate the folder on your computer where you want to send it to.</p>
+<p><img src="image/figure%2017.png" width="100%" /></p>
+<p><img src="image/figure%2018.png" width="100%" /></p>
+<p>For this example, notice that this repository is already on my GitHub since it has my username/the name I gave it. This ensures that when you clone a template you won’t modify the original. That’s it! Now it is all yours. You can start working on it normally, and when you are happy with your changes you can commit to main and it will be saved in your GitHub.com. It will be saved as a public file which is great to share your code with reviewers or peer scientists.</p>
+</div>
+<div id="one-last-bit-to-return-knowledge-to-your-dear-lab-mates" class="section level3">
+<h3>2.3 One last bit to return knowledge to your dear lab-mates</h3>
+<p>Did you notice that all our repositories have a README file attached?</p>
+<p><img src="image/figure%2019.png" width="100%" /></p>
+<p>After you have used one of the “bugoftheweek” templates, do not forget to click on the pencil (upper right corner) to add your name, date in which you used it and the link to your modified repository in your own GitHub.com account. You can also add a one sentence description of big adaptations you needed for your project. In this way, your lab-mates can not only use the basic template but also see how it looks its implementation in real-life projects. It is particularly helpful if someone needs to use a particular adaptation you did to the template.</p>
+</div>
+</div>
+<div id="scenario-3-modify-a-template-repository-and-upload-to-bugoftheweek" class="section level2">
+<h2>Scenario 3: Modify a template repository and upload to “bugoftheweek”</h2>
+<p><em>This scenario will be useful if you realize you want to contribute to our common knowledge and produce more templates for your fellow lab-mates.</em></p>
+<p>Before doing this, please discuss with Amanda. Ideally, we do not want to change the templates too much, only when we identify there is a mistake that needs to be amended, or we want to add a new script.</p>
+<div id="clone-the-template-from-the-organization-to-work-on-it-from-your-computer" class="section level3">
+<h3>3.1 Clone the template from the organization to work on it from your computer</h3>
+<p>Go to GitHub desktop. Select File - Clone repository - Select the one you want to work on and indicate the folder on your computer where you want to send it to.</p>
+<p><img src="image/figure%2020.png" width="100%" /></p>
+<p>Notice that in this case, the repository still belongs to “bugoftheweek”. Select the folder you want to save it to.</p>
+</div>
+<div id="modify-the-template" class="section level3">
+<h3>3.2 Modify the template</h3>
+<p>Work on the scripts normally and then push your changes by selecting “commit to main”. The original template will be updated.</p>
+<hr />
+<p>Annnnnd this is how we conclude this brief introduction to GitHub.</p>
+<p>We hope you find it useful!</p>
+</div>
+</div>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+<script>
+$(document).ready(function () {
+  window.initializeCodeFolding("hide" === "show");
+});
+</script>
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
