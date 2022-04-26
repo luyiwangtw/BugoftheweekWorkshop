@@ -9,7 +9,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="Bug of the week" />
+<meta name="author" content="Amanda Franklin, Laura Ospina, Lu-Yi Wang" />
 
 
 <title>Basic guide to set up and use GitHub</title>
@@ -340,12 +340,21 @@ div.tocify {
 
 
 <h1 class="title toc-ignore">Basic guide to set up and use GitHub</h1>
-<h4 class="author">Bug of the week</h4>
+<h4 class="author">Amanda Franklin, Laura Ospina, Lu-Yi Wang</h4>
 <h4 class="date">4/25/2022</h4>
 
 </div>
 
 
+<p>Workshop 1 - Getting Familiar with GitHub</p>
+<div id="a-general-comment" class="section level1">
+<h1>A General Comment</h1>
+<p>There are many ways to do the same thing in GitHub, we will give you our favourite (easy + fast), but you can explore others if you want.</p>
+</div>
+<div id="terminology" class="section level1">
+<h1>Terminology</h1>
+<p><br> <br> <strong>Repository</strong>: One project. It can contain multiple scripts and data sets. <br> <strong>Clone</strong>: Copy a repository to your computer so you can work on it. <br> <strong>Template</strong>: A repository that contains useful code. You can clone it and modify it for your own project. Even if you clone a repository, the changes will not affect the original. <br> <strong>Push</strong>: Upload your change sin GitHub. <br> <strong>Pull</strong>: Download any changes you (or anybody else) did in a repository you have already cloned. i.e. Download form the internet to your computer. <br></p>
+</div>
 <div id="setting-up" class="section level1">
 <h1>Setting up</h1>
 <ol style="list-style-type: decimal">
@@ -367,14 +376,6 @@ click finish
 <li>Request access to the Lab organization: “bugoftheweek”</li>
 </ol>
 <p>Once you have completed these steps, send your GitHub username and email address to <a href="mailto:amandaf@unimelb.edu.au" class="email">amandaf@unimelb.edu.au</a> so that we can invite you the lab organization: “bugoftheweek”.</p>
-</div>
-<div id="general-comments" class="section level1">
-<h1>General Comments</h1>
-<p>There are many ways to do the same thing in GitHub, we will give you our favourite (easy + fast), but you can explore others if you want.</p>
-</div>
-<div id="terminology" class="section level1">
-<h1>Terminology</h1>
-<p><strong>Repository</strong>: One project. It can contain multiple scripts and data sets. <br> <strong>Clone</strong>: Copy a repository to your computer so you can work on it. <br> <strong>Template</strong>: A repository that contains useful code. You can clone it and modify it for your own project. Even if you clone a repository, the changes will not affect the original. <br> <strong>Push</strong>: Upload your change sin GitHub. <br> <strong>Pull</strong>: Download any changes you (or anybody else) did in a repository you have already cloned. i.e. Download form the internet to your computer. <br></p>
 </div>
 <div id="three-different-situations-to-use-git-hub" class="section level1">
 <h1>Three different situations to use Git-Hub</h1>
@@ -452,17 +453,18 @@ Always click “fetch origin” before making any changes in your local file.
 After clicking “fetch origin”, the desktop app detected that there were two changes online, so you need to select “Pull origin” and then work on that last version.
 </p>
 </div>
-<hr />
-<p><em>Parenthesis for troubleshooting</em> <br> It can happen that you and your collaborator worked on the file at the same time. In this case, you would need to commit your changes, then pull and then resolve the mismatches selecting what to keep. However, this is a bit more complicated. One option is to type this line in your console:</p>
+</div>
+<div id="resolve-version-conflicts" class="section level3">
+<h3>1.5 Resolve version conflicts</h3>
+<p><em>This is a parenthesis for troubleshooting</em> <br> It can happen that you and your collaborator worked on the file at the same time. In this case, you would need to commit your changes, then pull and then resolve the mismatches selecting what to keep. However, this is a bit more complicated. One option is to type this line in your console:</p>
 <p><img src="image/figure%2012.png" width="100%" /></p>
 <p>GitHub Desktop will ask you if you want to open with R. Say yes, and it will show you the conflicts.</p>
 <p><img src="image/figure%2013.png" width="100%" /></p>
 <p>Resolve the conflicts, save the file and push to your GitHub. Hopefully that is not necessary</p>
-<p><em>End of the troubleshooting</em></p>
-<hr />
+<p><em>End of troubleshooting</em></p>
 </div>
 <div id="tracking-changes" class="section level3">
-<h3>1.5 Tracking Changes</h3>
+<h3>1.6 Tracking Changes</h3>
 <p>Click on “Fetch Origin” and then “History” to see the changes from your collaborators or the ones you did on your GitHub.com</p>
 <p><img src="image/figure%2014.png" width="100%" /></p>
 <p>And when you open the file in your computer you can be sure all the merging has been done automatically and your file has all the remote changes already included. 😊</p>
