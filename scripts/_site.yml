@@ -4,14 +4,14 @@ navbar:
   subtitle: Supplementary Information
   Date: "April 25th 2022"
   left:
-    - text: "Introduction"
-      href: index.html
-    - text: "Workshop 1: Github"
-      href: workshopGithub.html
-    - text: "Workshop 2: RMarkdown"
-      href: workshopRMarkdown.html
-    right:
-  - icon: fa-github
+  - text: "Introduction"
+    href: index.html
+  - text: "Workshop 1: Github"
+    href: workshopGithub.html
+  - text: "Workshop 2: RMarkdown"
+    href: workshopRMarkdown.html
+  right: 
+  - icon: fa-github 
     text: Bug of the week
     href: https://github.com/bugoftheweek
       
