@@ -1,7 +1,0 @@
----
-title: "Workshop 2: RMarkdown"
-author: "Amanda Franklin, Laura Ospina, Lu-Yi Wang"
-date: "4/25/2022"
-output: html_document
----
-Workshop 2: RMarkdown
