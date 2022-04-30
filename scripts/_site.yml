@@ -10,6 +10,10 @@ navbar:
       href: workshopGithub.html
     - text: "Workshop 2: RMarkdown"
       href: workshopRMarkdown.html
+    right:
+  - icon: fa-github
+    text: Bug of the week
+    href: https://github.com/bugoftheweek
       
 output:
   html_document:
