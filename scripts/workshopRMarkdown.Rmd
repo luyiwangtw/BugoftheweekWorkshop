@@ -93,6 +93,25 @@ _See [here](https://stats.oarc.ucla.edu/stat/data/rmarkdown/rmarkdown_seminar_fl
 
 <span style="color: #FF8F00">**Exercise 2**: Create **2** RMarkdown pages. Knit them into html and save them in the docs folder. Try to apply the syntax Amanda just showed you.
 
+For making buttons, you can use the following code after #, then the headers of the immediate lower level will turn into tabs.
+
+```{r eval=FALSE, include=TRUE}
+{.tabset .tabset-fade .tabset-pills}
+
+#e.g. 
+
+## Header 2 {.tabset .tabset-fade .tabset-pills}
+
+### Header 3.1 
+bla bla bla 
+
+### Header 3.2
+bla bla bla 
+
+# Here, you will get two tabs which are "Header 3.1" and "Header 3.2"
+```
+
+
 #### Index page
 Remember that we need a index.html file for the homepage? You can either assgin one of the pages you create as the homepage by changing the name of the corresponding .Rmd file to index and knit it again, or you can create a new .Rmd file and call it index. <br>
 
@@ -176,6 +195,30 @@ knitr::include_graphics("../images/publish.png")
 
 <span style="color: #FF8F00">**Exercise 4**: Try to publish your page!
 
+## Useful links
+
+### For RMarkdown:
+
+1. [RMarkdown cheat sheet](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf)
+2. [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/html-document.html#table-of-contents)
+3. [Tom Keaney's Introduction to R markdown](https://tomkeaney.github.io/Rmarkdown_intro/)
+4. [Getting started with a RMarkdown](https://ourcodingclub.github.io/tutorials/rmarkdown/)
+
+### For kniting into html:
+
+1. [R Markdown Websites](https://rmarkdown.rstudio.com/lesson-13.html)
+2. [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/html-document.html#table-of-contents)
+
+3. [Making websites](https://www.p8105.com/making_websites.html#Template_website)
+4. [R Markdown Basics](https://stats.oarc.ucla.edu/stat/data/rmarkdown/rmarkdown_seminar_flat.html#yaml-header)
+
+
+### Other awesome exmaple websites
+
+Might have useful code for some amazing features/figures.
+
+1. [Luke's data page](https://lukeholman.github.io/queen-pheromone-RNAseq/statistical-analysis.html#table_of_sample_sizes)
+2. [Justin's data page](https://justincally.github.io/SexualSelection/)
 
 # Knit into a PDF
 To knit into a PDF, you don't need the .yml file. All you need is to do is to change the output format into "pdf_document" <br>
