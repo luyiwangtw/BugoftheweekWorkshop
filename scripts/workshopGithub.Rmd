@@ -45,7 +45,7 @@ __Pull__: Download any changes you (or anybody else) did in a repository you hav
 Open GitHub desktop and click sign in to GitHub.com:
 
 ```{r, echo = FALSE, out.width = '100%'}
-knitr::include_graphics("../image/figure 1.png")
+knitr::include_graphics("../images/figure 1.png")
 ```
 
 Then, introduce your log in details if the app asks for them (if you are already logged in in your browser, the app would probably fill everything automatically). Then, authorize the application to open with GitHub Desktop. 
@@ -53,7 +53,7 @@ Then, introduce your log in details if the app asks for them (if you are already
 The following window will pop up: 
 
 ```{r, echo = FALSE, fig.cap = "click finish", out.width = '100%'}
-knitr::include_graphics("../image/figure 2.png")
+knitr::include_graphics("../images/figure 2.png")
 ```
 
 4. Request access to the Lab organization: “bugoftheweek”
@@ -89,11 +89,11 @@ Go to R studio and assign a project to your script
 Note: You may have already assigned a project, if at the beginning, you started by creating a new project instead of just a new script. 
 
 ```{r, echo = FALSE, fig.cap = "In the upper right corner click in the arrow to display the dropdown menu. Click on “New Project”.", out.width = '50%'}
-knitr::include_graphics("../image/figure 3.png")
+knitr::include_graphics("../images/figure 3.png")
 ```
 
 ```{r, echo = FALSE, fig.cap = "Follow the prompts: New directory – New Project -Add name and location", out.width = '50%'}
-knitr::include_graphics("../image/figure 4.png")
+knitr::include_graphics("../images/figure 4.png")
 ```
 
 Note: Do not select “create a git repository”. It is possible to do it this way, but it is longer. And click “Accept”. 
@@ -106,19 +106,19 @@ Note: Do not select “create a git repository”. It is possible to do it this 
 Create a new repository from GitHub Desktop
 
 ```{r, echo = FALSE, fig.cap = "Open GitHub Desktop", out.width = '100%'}
-knitr::include_graphics("../image/figure 5.png")
+knitr::include_graphics("../images/figure 5.png")
 ```
 
 ```{r, echo = FALSE, fig.cap = "Both paths will lead to this pop up", out.width = '50%'}
-knitr::include_graphics("../image/figure 6.png")
+knitr::include_graphics("../images/figure 6.png")
 ```
 
 ```{r, echo = FALSE, fig.cap = "Choose the directory where you have your project. And click on “create repository”. Then this windwo will appear", out.width = '75%'}
-knitr::include_graphics("../image/figure 7.png")
+knitr::include_graphics("../images/figure 7.png")
 ```
 
 ```{r, echo = FALSE, fig.cap = "Next, your app would look like this", out.width = '100%'}
-knitr::include_graphics("../image/figure 8.png")
+knitr::include_graphics("../images/figure 8.png")
 ```
 
 Click publish repository, and that is it! It will be uploaded to your GitHub. 
@@ -133,7 +133,7 @@ Push your local changes to GitHub
 Any time you make changes in your code in your local folder, they will appear on the left-hand panel. When you are ready, write a small summary and description of your changes so that people know why this was required and then push them to GitHub by selecting “Commit to main”
 
 ```{r, echo = FALSE, fig.cap = "Next, your app would look like this", out.width = '100%'}
-knitr::include_graphics("../image/figure 9.png")
+knitr::include_graphics("../images/figure 9.png")
 ```
 
 
@@ -149,11 +149,11 @@ From now on, it will be super easy to upload your local changes to your GitHub.c
 __Important!!!__ Always pull origin before start working on any repository. In this way you first download the latest version online, then combine that with your local changes. Here is an example: 
 
 ```{r, echo = FALSE, fig.cap = "Always click “fetch origin” before making any changes in your local file.", out.width = '100%'}
-knitr::include_graphics("../image/figure 10.png")
+knitr::include_graphics("../images/figure 10.png")
 ```
 
 ```{r, echo = FALSE, fig.cap = "After clicking “fetch origin”, the desktop app detected that there were two changes online, so you need to select “Pull origin” and then work on that last version.", out.width = '100%'}
-knitr::include_graphics("../image/figure 11.png")
+knitr::include_graphics("../images/figure 11.png")
 ```
 
 <br>
@@ -168,13 +168,13 @@ _This is a parenthesis for troubleshooting_
 It can happen that you and your collaborator worked on the file at the same time. In this case, you would need to commit your changes, then pull and then resolve the mismatches selecting what to keep. However, this is a bit more complicated. One option is to type this line in your console: 
 
 ```{r, echo = FALSE, out.width = '100%'}
-knitr::include_graphics("../image/figure 12.png")
+knitr::include_graphics("../images/figure 12.png")
 ```
 
 GitHub Desktop will ask you if you want to open with R. Say yes, and it will show you the conflicts.
 
 ```{r, echo = FALSE, out.width = '100%'}
-knitr::include_graphics("../image/figure 13.png")
+knitr::include_graphics("../images/figure 13.png")
 ```
 
 Resolve the conflicts, save the file and push to your GitHub. Hopefully that is not necessary
@@ -189,7 +189,7 @@ _End of troubleshooting_
 Click on “Fetch Origin” and then “History” to see the changes from your collaborators or the ones you did on your GitHub.com
 
 ```{r, echo = FALSE, out.width = '100%'}
-knitr::include_graphics("../image/figure 14.png")
+knitr::include_graphics("../images/figure 14.png")
 ```
 
 And when you open the file in your computer you can be sure all the merging has been done automatically and your file has all the remote changes already included. 😊 
@@ -216,11 +216,11 @@ Got to your GitHub.com. By this time you probably have been added to “bugofthe
 We have divided the repositories according to your topics of interest. Click on the one you need, and then click on the button “Use this template”.
 
 ```{r, echo = FALSE, out.width = '100%'}
-knitr::include_graphics("../image/figure 15.png")
+knitr::include_graphics("../images/figure 15.png")
 ```
 
 ```{r, echo = FALSE, fig.cap = "You will see this screen", out.width = '100%'}
-knitr::include_graphics("../image/figure 16.png")
+knitr::include_graphics("../images/figure 16.png")
 ```
 
 (Note: this is an example from another repository, Statistics)
@@ -236,11 +236,11 @@ Clone this template to work on it from your computer
 Go to GitHub desktop. Select File - Clone repository -  Select the one you want to work on and indicate the folder on your computer where you want to send it to. 
 
 ```{r, echo = FALSE, out.width = '80%'}
-knitr::include_graphics("../image/figure 17.png")
+knitr::include_graphics("../images/figure 17.png")
 ```
 
 ```{r, echo = FALSE, out.width = '80%'}
-knitr::include_graphics("../image/figure 18.png")
+knitr::include_graphics("../images/figure 18.png")
 ```
 
 For this example, notice that this repository is already on my GitHub since it has my username/the name I gave it. This ensures that when you clone a template you won’t modify the original. 
@@ -256,7 +256,7 @@ One last bit to return knowledge to your dear lab-mates
 Did you notice that all our repositories have a README file attached?
 
 ```{r, echo = FALSE, out.width = '100%'}
-knitr::include_graphics("../image/figure 19.png")
+knitr::include_graphics("../images/figure 19.png")
 ```
 
 After you have used one of the “bugoftheweek” templates, do not forget to click on the pencil (upper right corner) to add your name, date in which you used it and the link to your modified repository in your own GitHub.com account. You can also add a one sentence description of big adaptations you needed for your project. In this way, your lab-mates can not only use the basic template but also see how it looks its implementation in real-life projects. It is particularly helpful if someone needs to use a particular adaptation you did to the template. 
@@ -288,7 +288,7 @@ Clone the template from the organization to work on it from your computer
 Go to GitHub desktop. Select File - Clone repository -  Select the one you want to work on and indicate the folder on your computer where you want to send it to. 
 
 ```{r, echo = FALSE, out.width = '80%'}
-knitr::include_graphics("../image/figure 20.png")
+knitr::include_graphics("../images/figure 20.png")
 ```
 
 Notice that in this case, the repository still belongs to “bugoftheweek”. Select the folder you want to save it to. 
