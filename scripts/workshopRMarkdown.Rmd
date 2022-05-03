@@ -60,7 +60,7 @@ There are two files you need to have to publish a webpage:
 2. _site.yml:  essential if you want to have more than one page on your site. It provides the global YAML header for the site.
 
 
-<span style="color: #FF8F00">**Exercise 1**: Copy the Website repo from Bug of the week to your own GitHub.
+<span style="color: #FF8F00">**Exercise 1**: Copy the [Website repo](https://github.com/bugoftheweek/Webpage/tree/main) from Bug of the week to your own GitHub. 
 
 _Note: You would like to save your output html files in the docs folder. To do so, you will need to change the directory in the yaml header like the following code:_
 ```{r eval=FALSE, include=TRUE}
@@ -119,7 +119,7 @@ knitr::include_graphics("../images/create text.png")
 
 Note: You need to place the _site.yml file in the same folder as other .Rmd files
 
-2. **Change the file type to .yml** by adding ".yml" at the end of the file.
+2. **Change the file type to .yml** by adding ".yml" at the end of the file. After this, open the .yml file from RStudio instead of directly from the folder.
 
 3. **Inside the _site.yml file** Whatever you put here will overwrite the ymal header in the separate .Rmd files. In side the file, we will specify some things including the headers, the table, the theme, and the output directory.
 
@@ -157,6 +157,9 @@ output_dir: "../docs"
 ```
 
 <span style="color: #FF8F00">**Exercise 4**: Make some edits (e.g. headers) in your _site.yml file!
+
+## Publish it!
+
 
 # Knit into a PDF
 To knit into a PDF, you don't need the .yml file. All you need is to do is to change the output format into "pdf_document" <br>
