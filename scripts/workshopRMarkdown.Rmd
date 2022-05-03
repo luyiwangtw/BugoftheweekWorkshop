@@ -11,10 +11,10 @@ Workshop 2 - RMarkdown
 
 # The aim 
 
-We want to present the results and the visuals in ways that are easier to share with people. We will knit the RMarkdown file into a PDF or a the webpage, so people can have all the info in one place together (with the code if it is a webpage).
+We want to present the results and the visuals in ways that are easier to share with people. We will knit the RMarkdown file into a PDF or a webpage, so people can have all the info in one place (together with the code if it is a webpage).
 
 # Structure 
-As we have mentioned in the last workshop (or not), we suggest you to have some folders to keep everything tidy.
+As we have mentioned in the last workshop (or not), we suggest you to have some specific folders to keep everything tidy.
 
 * data: your data
 * scripts: for the scripts, including .R and .Rmd files
@@ -23,7 +23,7 @@ As we have mentioned in the last workshop (or not), we suggest you to have some 
 
 # Knit into html
 
-We will create a webpage using RMarkdown and publish it as a GitHub page.
+We will RMarkdown to create a webpage and publish the page as a GitHub page online.
 
 example 1 - [Visual models](https://luyiwangtw.github.io/LongWavelengthSensitivity/)
 
@@ -31,7 +31,7 @@ example 2 - [Heating rate](https://lospinarozo.github.io/PrettyCoolBeetlesCodeAn
 
 ## Details {.tabset .tabset-fade .tabset-pills}
 
-Let's take a closer look what we can have in a webpage.
+Let's take a closer look what we can have in a website
 
 ### 1. Header 
 ```{r, echo = FALSE, out.width = '100%'}
@@ -62,12 +62,6 @@ There are two files you need to have to publish a webpage:
 
 <span style="color: #FF8F00">**Exercise 1**: Copy the [Website repo](https://github.com/bugoftheweek/Webpage/tree/main) from Bug of the week to your own GitHub. 
 
-_Note: You would like to save your output html files in the docs folder. To do so, you will need to change the directory in the yaml header like the following code:_
-```{r eval=FALSE, include=TRUE}
-knit: (function(inputFile, encoding) {
-  rmarkdown::render(inputFile, encoding = encoding, output_dir = "../docs") })
-```
-
 ### html
 
 #### Content page
@@ -90,6 +84,12 @@ knit: (function(inputFile, encoding) {
 
 _See [here](https://stats.oarc.ucla.edu/stat/data/rmarkdown/rmarkdown_seminar_flat.html#elements-of-an-r-markdown-file---yaml-header) and [here](https://stats.oarc.ucla.edu/stat/data/rmarkdown/rmarkdown_seminar_flat.html#yaml-header) for more details about yaml._
 
+
+_Note: You would like to save your output html files in the docs folder. To do so, you will need to change the directory in the yaml header using the following code:_
+```{r eval=FALSE, include=TRUE}
+knit: (function(inputFile, encoding) {
+  rmarkdown::render(inputFile, encoding = encoding, output_dir = "../docs") })
+```
 
 <span style="color: #FF8F00">**Exercise 2**: Create **2** RMarkdown pages. Knit them into html and save them in the docs folder. Try to apply the syntax Amanda just showed you.
 
@@ -115,7 +115,7 @@ bla bla bla
 #### Index page
 Remember that we need a index.html file for the homepage? You can either assgin one of the pages you create as the homepage by changing the name of the corresponding .Rmd file to index and knit it again, or you can create a new .Rmd file and call it index. <br>
 
-To link to other page, you an use the following code
+To link to the other page, you an use the following code
 ```{r eval=FALSE, include=TRUE}
 [text](html file name/http address)
 
@@ -128,7 +128,7 @@ To link to other page, you an use the following code
 
 ### yml
 We have created two separate pages. How do we combine them into one site?<br>
-To do this, we need the _site.yml file (need to specifically called _site.yml).
+To do this, we need the _site.yml file (need to be specifically called _site.yml).
 
 1. **Create a text file**
 
@@ -140,7 +140,7 @@ Note: You need to place the _site.yml file in the same folder as other .Rmd file
 
 2. **Change the file type to .yml** by adding ".yml" at the end of the file. After this, open the .yml file from RStudio instead of directly from the folder.
 
-3. **Inside the _site.yml file** Whatever you put here will overwrite the ymal header in the separate .Rmd files. In side the file, we will specify some things including the headers, the table, the theme, and the output directory.
+3. **Inside the** _site.yml **file** Whatever you put here will overwrite the ymal header in the separate .Rmd files. In side the file, we will specify things including the headers, the table, the theme, and the output directory.
 
 _Note: you need to set the output directory to the same folder (docs) as other html to be able to combine them into one site_
 
@@ -166,8 +166,8 @@ output:
   html_document:
     toc: true # table of content true
     toc_float: # have a table of content at the left side
-      collapsed: true #default true, only show up tp level 2 unless click to expand
-      smooth_scroll: true #animated the page to the clicked item
+      collapsed: true # default true, only show up tp level 2 unless click to expand
+      smooth_scroll: true # animated the page to the clicked item
     depth: 6  # up to three depths of headings (specified by #, ## and ###)
     number_sections: false  #  number sections at each table header
     theme: flatly # theme for fonts and colours
@@ -183,7 +183,7 @@ Now we are going to make the site go online!
 
 1. Be sure your repo is public. If not, got to Setting -> Genral -> scroll to the end.
 
-2. In the Setting, on the left table, click Page
+2. In the Setting, on the left table, click Pages
 
 ```{r, echo = FALSE, out.width = '100%'}
 knitr::include_graphics("../images/publish.png")
@@ -191,20 +191,20 @@ knitr::include_graphics("../images/publish.png")
 
 3. Change the branch to "main" and the folder to "docs" cause that is where the index.html is.
 
-4. You made it! But it will take a couple minutes till you the link starts to work.
+4. You made it! But it will take a couple minutes till the link starts to work.
 
 <span style="color: #FF8F00">**Exercise 4**: Try to publish your page!
 
 ## Useful links
 
-### For RMarkdown:
+### For RMarkdown
 
 1. [RMarkdown cheat sheet](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf)
 2. [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/html-document.html#table-of-contents)
 3. [Tom Keaney's Introduction to R markdown](https://tomkeaney.github.io/Rmarkdown_intro/)
 4. [Getting started with a RMarkdown](https://ourcodingclub.github.io/tutorials/rmarkdown/)
 
-### For kniting into html:
+### For kniting into html
 
 1. [R Markdown Websites](https://rmarkdown.rstudio.com/lesson-13.html)
 2. [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/html-document.html#table-of-contents)
@@ -215,20 +215,20 @@ knitr::include_graphics("../images/publish.png")
 
 ### Other awesome exmaple websites
 
-Might have useful code for some amazing features/figures.
+Have useful code for some amazing features/figures.
 
 1. [Luke's data page](https://lukeholman.github.io/queen-pheromone-RNAseq/statistical-analysis.html#table_of_sample_sizes)
 2. [Justin's data page](https://justincally.github.io/SexualSelection/)
 
 # Knit into a PDF
-To knit into a PDF, you don't need the .yml file. All you need is to do is to change the output format into "pdf_document" <br>
-If you choose the output format to PDF upon creating the RMarkdown, it will automatically assign the output format to PDF. But you need to change the output directory to the docs folder.
+To knit into a PDF, you don't need the .yml file. All you need to do is to change the output format into "pdf_document" <br>
+If you choose the output format to PDF upon creating the RMarkdown, it will automatically assign the output format to PDF. But you need to change the output directory to the docs folder manually on the yaml header.
 
 ```{r, echo = FALSE, out.width = '50%'}
 knitr::include_graphics("../images/RMarkdown PDF.png")
 ```
 
-However, there are some difference in syntax between the two formats and functions are available in html but not in PDF, e.g. Tabs, code buttons. So they are not completely compatible.
+However, there are some difference in syntax between the two formats and some functions are available for html output but not for PDF one, e.g. tabs, code buttons. So they are not completely compatible.
 
 
 ```{r eval=FALSE, include=TRUE}
