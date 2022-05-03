@@ -13,38 +13,7 @@ Workshop 2 - RMarkdown
 
 We want to present the results and the visuals in ways that are easier to share with people. We will knit the RMarkdown file into a PDF or a the webpage, so people can have all the info in one place together (with the code if it is a webpage).
 
-We will create a webpage using RMarkdown and publish it as a GitHub page.
-
-example 1 - [Visual models](https://luyiwangtw.github.io/LongWavelengthSensitivity/)
-
-example 2 - [Heating rate](https://lospinarozo.github.io/PrettyCoolBeetlesCodeAndData/)
-
-# Details {.tabset .tabset-fade .tabset-pills}
-
-Let's take a closer look what we can have in a webpage.
-
-## 1. Header 
-```{r, echo = FALSE, out.width = '100%'}
-knitr::include_graphics("../images/header.png")
-```
-
-## 2. Table
-```{r, echo = FALSE, out.width = '100%'}
-knitr::include_graphics("../images/float toc.png")
-```
-
-## 3. Tabs
-```{r, echo = FALSE, out.width = '100%'}
-knitr::include_graphics("../images/tabs.png")
-```
-
-## 4. Code button
-```{r, echo = FALSE, out.width = '100%'}
-knitr::include_graphics("../images/show code.png")
-```
-
-# Structure and Essentials
-
+# Structure 
 As we have mentioned in the last workshop (or not), we suggest you to have some folders to keep everything tidy.
 
 * data: your data
@@ -52,22 +21,150 @@ As we have mentioned in the last workshop (or not), we suggest you to have some 
 * docs: for the output
 * images (optional): for the images 
 
+# Knit into html
 
-## Files 
-There are two files you must have to publish a webpage:
+We will create a webpage using RMarkdown and publish it as a GitHub page.
+
+example 1 - [Visual models](https://luyiwangtw.github.io/LongWavelengthSensitivity/)
+
+example 2 - [Heating rate](https://lospinarozo.github.io/PrettyCoolBeetlesCodeAndData/)
+
+## Details {.tabset .tabset-fade .tabset-pills}
+
+Let's take a closer look what we can have in a webpage.
+
+### 1. Header 
+```{r, echo = FALSE, out.width = '100%'}
+knitr::include_graphics("../images/header.png")
+```
+
+### 2. Table
+```{r, echo = FALSE, out.width = '100%'}
+knitr::include_graphics("../images/float toc.png")
+```
+
+### 3. Tabs
+```{r, echo = FALSE, out.width = '100%'}
+knitr::include_graphics("../images/tabs.png")
+```
+
+### 4. Code button
+```{r, echo = FALSE, out.width = '100%'}
+knitr::include_graphics("../images/show code.png")
+```
+
+## Essentials Files 
+There are two files you need to have to publish a webpage:
 
 1. index.html: default homepage
-2. _site.yml:  provides the global YAML header for the site
+2. _site.yml:  essential if you want to have more than one page on your site. It provides the global YAML header for the site.
 
 
-<span style="color: #FF8F00">*Exercise 1* <br>
-Download the template from Bug of the week repo.
+<span style="color: #FF8F00">**Exercise 1**: Copy the Website repo from Bug of the week to your own GitHub.
 
+_Note: You would like to save your output html files in the docs folder. To do so, you will need to change the directory in the yaml header like the following code:_
+```{r eval=FALSE, include=TRUE}
+knit: (function(inputFile, encoding) {
+  rmarkdown::render(inputFile, encoding = encoding, output_dir = "../docs") })
+```
 
-## YAML header 
+### html
 
-yaml header controls the overall appearance of the page.<br>
+#### Content page
+You can create RMarkdown files and set the output into html format. <br> 
+Where to set it? <br>
+You will set the output formate and appearance in the yaml header of your RMarkdown file.<br>
+What and where is the yaml header?<br>
+In (very) short, it controls the overall appearance of the page and it is on the top of the file like this:<br>
+
+```{r eval=FALSE, include=TRUE}
+---
+title: "Workshop 2: RMarkdown"
+author: "Amanda Franklin, Laura Ospina, Lu-Yi Wang"
+date: "4/25/2022"
+output: html_document
+knit: (function(inputFile, encoding) {
+  rmarkdown::render(inputFile, encoding = encoding, output_dir = "../docs") })
+---
+```
+
 _See [here](https://stats.oarc.ucla.edu/stat/data/rmarkdown/rmarkdown_seminar_flat.html#elements-of-an-r-markdown-file---yaml-header) and [here](https://stats.oarc.ucla.edu/stat/data/rmarkdown/rmarkdown_seminar_flat.html#yaml-header) for more details about yaml._
 
 
+<span style="color: #FF8F00">**Exercise 2**: Create **2** RMarkdown pages. Knit them into html and save them in the docs folder. Try to apply the syntax Amanda just showed you.
 
+#### Index page
+Remember that we need a index.html file for the homepage? You can either assgin one of the pages you create as the homepage by changing the name of the corresponding .Rmd file to index and knit it again, or you can create a new .Rmd file and call it index. <br>
+
+To link to other page, you an use the following code
+```{r eval=FALSE, include=TRUE}
+[text](html file name/http address)
+
+# For example, if in the same folder 
+# [Workshop 1: Github](workshopGithub.html) 
+# Or [Bug of the week](https://github.com/bugoftheweek)
+```
+
+<span style="color: #FF8F00">**Exercise 3**: Make your index.html file and try to link it to the pages you just made.
+
+### yml
+We have created two separate pages. How do we combine them into one site?<br>
+To do this, we need the _site.yml file (need to specifically called _site.yml).
+
+1. **Create a text file**
+
+```{r, echo = FALSE, out.width = '30%'}
+knitr::include_graphics("../images/create text.png")
+```
+
+Note: You need to place the _site.yml file in the same folder as other .Rmd files
+
+2. **Change the file type to .yml** by adding ".yml" at the end of the file.
+
+3. **Inside the _site.yml file** Whatever you put here will overwrite the ymal header in the separate .Rmd files. In side the file, we will specify some things including the headers, the table, the theme, and the output directory.
+
+_Note: you need to set the output directory to the same folder (docs) as other html to be able to combine them into one site_
+
+```{r eval=FALSE, include=TRUE}
+name: "Lab Workshop"
+navbar:
+  title: ""
+  subtitle: Supplementary Information
+  Date: "April 25th 2022"
+  left: # left side of the header
+  - text: "Introduction"
+    href: index.html
+  - text: "Workshop 1: Github"
+    href: workshopGithub.html
+  - text: "Workshop 2: RMarkdown"
+    href: workshopRMarkdown.html
+  right: # right side of the header
+  - icon: fa-github # icon of GitHub
+    text: Bug of the week
+    href: https://github.com/bugoftheweek # You can also have a http address 
+      
+output:
+  html_document:
+    toc: true # table of content true
+    toc_float: # have a table of content at the left side
+      collapsed: true #default true, only show up tp level 2 unless click to expand
+      smooth_scroll: true #animated the page to the clicked item
+    depth: 6  # up to three depths of headings (specified by #, ## and ###)
+    number_sections: false  #  number sections at each table header
+    theme: flatly # theme for fonts and colours
+    highlight: tango # different theme for the appearance of the code
+output_dir: "../docs"
+```
+
+<span style="color: #FF8F00">**Exercise 4**: Make some edits (e.g. headers) in your _site.yml file!
+
+# Knit into a PDF
+To knit into a PDF, you don't need the .yml file. All you need is to do is to change the output format into "pdf_document" <br>
+
+However, there are some difference in syntax between the two formats and functions are available in html but not in PDF, e.g. Tabs, code buttons.
+
+```{r eval=FALSE, include=TRUE}
+output: pdf_document
+```
+
+<span style="color: #FF8F00">**Exercise 4**: Try to make one RMardown file and knit it into a PDF.
