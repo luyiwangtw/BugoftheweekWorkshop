@@ -160,11 +160,17 @@ output_dir: "../docs"
 
 # Knit into a PDF
 To knit into a PDF, you don't need the .yml file. All you need is to do is to change the output format into "pdf_document" <br>
+If you choose the output format to PDF upon creating the RMarkdown, it will automatically assign the output format to PDF. But you need to change the output directory to the docs folder.
 
-However, there are some difference in syntax between the two formats and functions are available in html but not in PDF, e.g. Tabs, code buttons.
+```{r, echo = FALSE, out.width = '50%'}
+knitr::include_graphics("../images/RMarkdown PDF.png")
+```
+
+However, there are some difference in syntax between the two formats and functions are available in html but not in PDF, e.g. Tabs, code buttons. So they are not completely compatible.
+
 
 ```{r eval=FALSE, include=TRUE}
 output: pdf_document
 ```
 
-<span style="color: #FF8F00">**Exercise 4**: Try to make one RMardown file and knit it into a PDF.
+<span style="color: #FF8F00">**Exercise 4**: Try to make one RMarkdown file and knit it into a PDF.
