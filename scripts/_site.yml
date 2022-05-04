@@ -1,7 +1,7 @@
 name: "Lab Workshop"
 navbar:
   title: ""
-  subtitle: Supplementary Information
+  subtitle:
   Date: "April 25th 2022"
   left:
   - text: "Introduction"
