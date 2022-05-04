@@ -22,7 +22,7 @@ To produce readable and beautiful code + convert it into an HTML website + put a
 Example:
 
 ```{r, echo = FALSE, out.width = '100%'}
-knitr::include_graphics("../image/Intro 1.png")
+knitr::include_graphics("../images/Intro 1.png")
 ```
 
 Link = https://lospinarozo.github.io/PrettyCoolBeetlesCodeAndData/ 
@@ -62,7 +62,7 @@ Why is it useful to include a link to your code in your manuscript from the firs
 <br>
 
 ```{r, echo = FALSE, out.width = '100%'}
-knitr::include_graphics("../image/Gru meme.jpg")
+knitr::include_graphics("../images/Gru meme.jpg")
 ```
 
 <br>

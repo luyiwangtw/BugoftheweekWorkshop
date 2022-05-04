@@ -6,8 +6,8 @@ navbar:
   left:
   - text: "Introduction"
     href: index.html
-  - text: "Workshop 1: Github"
-    href: workshopGithub.html
+  - text: "Workshop 1: GitHub"
+    href: workshopGitHub.html
   - text: "Workshop 2: RMarkdown"
     href: workshopRMarkdown.html
   right: 
