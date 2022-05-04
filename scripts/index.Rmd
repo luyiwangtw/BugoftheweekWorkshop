@@ -78,6 +78,6 @@ The paper is **just the tip of the iceberg**, what about those thousands  lines 
 <br>
 <br>
 
-1. [Workshop 1: Github](workshopGithub.html) 
+1. [Workshop 1: Github](workshopGitHub.html) 
 
 1. [Workshop 2: RMarkdown](workshopRMarkdown.html) 
