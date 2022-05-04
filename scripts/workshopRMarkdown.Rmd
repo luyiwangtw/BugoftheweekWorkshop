@@ -23,7 +23,7 @@ As we have mentioned in the last workshop (or not), we suggest you to have some 
 
 # Knit into html
 
-We will RMarkdown to create a webpage and publish the page as a GitHub page online.
+We will use RMarkdown to create a webpage and publish the page as a GitHub page online.
 
 example 1 - [Visual models](https://luyiwangtw.github.io/LongWavelengthSensitivity/)
 
@@ -195,30 +195,6 @@ knitr::include_graphics("../images/publish.png")
 
 <span style="color: #FF8F00">**Exercise 4**: Try to publish your page!
 
-## Useful links
-
-### For RMarkdown
-
-1. [RMarkdown cheat sheet](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf)
-2. [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/html-document.html#table-of-contents)
-3. [Tom Keaney's Introduction to R markdown](https://tomkeaney.github.io/Rmarkdown_intro/)
-4. [Getting started with a RMarkdown](https://ourcodingclub.github.io/tutorials/rmarkdown/)
-
-### For kniting into html
-
-1. [R Markdown Websites](https://rmarkdown.rstudio.com/lesson-13.html)
-2. [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/html-document.html#table-of-contents)
-
-3. [Making websites](https://www.p8105.com/making_websites.html#Template_website)
-4. [R Markdown Basics](https://stats.oarc.ucla.edu/stat/data/rmarkdown/rmarkdown_seminar_flat.html#yaml-header)
-
-
-### Other awesome exmaple websites
-
-Have useful code for some amazing features/figures.
-
-1. [Luke's data page](https://lukeholman.github.io/queen-pheromone-RNAseq/statistical-analysis.html#table_of_sample_sizes)
-2. [Justin's data page](https://justincally.github.io/SexualSelection/)
 
 # Knit into a PDF
 To knit into a PDF, you don't need the .yml file. All you need to do is to change the output format into "pdf_document" <br>
@@ -236,3 +212,27 @@ output: pdf_document
 ```
 
 <span style="color: #FF8F00">**Exercise 5**: Try to make one RMarkdown file and knit it into a PDF.
+
+
+# Useful links
+## For RMarkdown
+
+1. [RMarkdown cheat sheet](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf)
+2. [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/html-document.html#table-of-contents)
+3. [Tom Keaney's Introduction to R markdown](https://tomkeaney.github.io/Rmarkdown_intro/)
+4. [Getting started with a RMarkdown](https://ourcodingclub.github.io/tutorials/rmarkdown/)
+
+## For kniting into html
+
+1. [R Markdown Websites](https://rmarkdown.rstudio.com/lesson-13.html)
+2. [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/html-document.html#table-of-contents)
+
+3. [Making websites](https://www.p8105.com/making_websites.html#Template_website)
+4. [R Markdown Basics](https://stats.oarc.ucla.edu/stat/data/rmarkdown/rmarkdown_seminar_flat.html#yaml-header)
+
+## Other awesome exmaple websites
+
+Have useful code for some amazing features/figures.
+
+1. [Luke's data page](https://lukeholman.github.io/queen-pheromone-RNAseq/statistical-analysis.html#table_of_sample_sizes)
+2. [Justin's data page](https://justincally.github.io/SexualSelection/)
