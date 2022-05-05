@@ -228,11 +228,11 @@ output: pdf_document
 
 If you choose the output format to PDF upon creating the RMarkdown, it will automatically assign the output format to PDF. But you need to change the output directory to the docs folder manually on the yaml header.
 
-_Note: There are some difference in syntax between the html and PDF formats and some functions are available for html output but not for PDF one, e.g. tabs, code buttons. So they are not completely compatible._
-
 ```{r, echo = FALSE, out.width = '50%'}
 knitr::include_graphics("../images/RMarkdown PDF.png")
 ```
+
+_Note: There are some difference in syntax between the html and PDF formats and some functions are available for html output but not for PDF one, e.g. tabs, code buttons. So they are not completely compatible._
 
 To knit an RMkarkdown into PDF,you will need to install LaTeX on you computer. The simplest way is to install  [TinyTeX](https://yihui.name/tinytex/) and you can run the following code from [here](https://bookdown.org/yihui/rmarkdown/installation.html) in R to install it.
 
