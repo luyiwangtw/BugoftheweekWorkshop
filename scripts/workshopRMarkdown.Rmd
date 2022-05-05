@@ -13,6 +13,16 @@ Workshop 2 - RMarkdown
 
 We want to present the results and the visuals in ways that are easier to share with people. We will knit the RMarkdown file into a PDF or a webpage, so people can have all the info in one place (together with the code if it is a webpage).
 
+# What is RMarkdown?
+
+RMarkdown is a file format to make dynamic documents in R. You can include 
+analyses with outputs, graphs, text to explain your analysis, photos and 
+hyperlinks. This page you are looking at right now is produced from an 
+RMarkdown file! The RMarkdown file consists of text and chunks of code. This 
+allows you to provide formatted explanations alongside your code and analysis.
+
+Check out [these](https://luyiwangtw.github.io/BugoftheweekWorkshop/workshopRMarkdown.html#Useful_links) useful links (below) to learn more.
+
 # Structure 
 As we have mentioned in the last workshop (or not), we suggest you to have some specific folders to keep everything tidy.
 
@@ -217,10 +227,11 @@ output: pdf_document
 # Useful links
 ## For RMarkdown
 
-1. [RMarkdown cheat sheet](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf)
-2. [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/html-document.html#table-of-contents)
-3. [Tom Keaney's Introduction to R markdown](https://tomkeaney.github.io/Rmarkdown_intro/)
-4. [Getting started with a RMarkdown](https://ourcodingclub.github.io/tutorials/rmarkdown/)
+1. [RMarkdwon Introduction and Lesson](https://rmarkdown.rstudio.com/lesson-1.html)
+2. [RMarkdown cheat sheet](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf)
+3. [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/html-document.html#table-of-contents)
+4. [Tom Keaney's Introduction to R markdown](https://tomkeaney.github.io/Rmarkdown_intro/)
+5. [Getting started with a RMarkdown](https://ourcodingclub.github.io/tutorials/rmarkdown/)
 
 ## For kniting into html
 
