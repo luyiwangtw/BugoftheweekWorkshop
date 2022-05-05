@@ -220,7 +220,12 @@ knitr::include_graphics("../images/publish.png")
 
 
 # Knit into a PDF
-To knit into a PDF, you don't need the .yml file. All you need to do is to change the output format into "pdf_document" <br>
+To knit into a PDF, you don't need the .yml file. All you need to do is to change the output format into "pdf_document".
+
+```{r eval=FALSE, include=TRUE}
+output: pdf_document
+```
+
 If you choose the output format to PDF upon creating the RMarkdown, it will automatically assign the output format to PDF. But you need to change the output directory to the docs folder manually on the yaml header.
 
 ```{r, echo = FALSE, out.width = '50%'}
@@ -235,10 +240,6 @@ tinytex::install_tinytex()
 ```
 
 There are some difference in syntax between the two formats and some functions are available for html output but not for PDF one, e.g. tabs, code buttons. So they are not completely compatible.
-
-```{r eval=FALSE, include=TRUE}
-output: pdf_document
-```
 
 If you want to include a content table on the first page of the PDF, you can add the following code in the yaml header:
 
