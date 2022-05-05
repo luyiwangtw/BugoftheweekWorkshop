@@ -227,12 +227,6 @@ If you choose the output format to PDF upon creating the RMarkdown, it will auto
 knitr::include_graphics("../images/RMarkdown PDF.png")
 ```
 
-However, there are some difference in syntax between the two formats and some functions are available for html output but not for PDF one, e.g. tabs, code buttons. So they are not completely compatible.
-
-```{r eval=FALSE, include=TRUE}
-output: pdf_document
-```
-
 To knit an RMkarkdown into PDF,you will need to install LaTeX on you computer. The simplest way is to install  [TinyTeX](https://yihui.name/tinytex/) and you can run the following code from [here](https://bookdown.org/yihui/rmarkdown/installation.html) in R to install it.
 
 ```{r eval=FALSE, include=TRUE}
@@ -240,8 +234,24 @@ install.packages('tinytex')
 tinytex::install_tinytex()
 ```
 
+There are some difference in syntax between the two formats and some functions are available for html output but not for PDF one, e.g. tabs, code buttons. So they are not completely compatible.
+
+```{r eval=FALSE, include=TRUE}
+output: pdf_document
+```
+
+If you want to include a content table on the first page of the PDF, you can add the following code in the yaml header:
+
+```{r eval=FALSE, include=TRUE}
+output: 
+  pdf_document:
+    toc: true # To have the content table or not
+    toc_depth: 3 # To which level of the headers you want to include
+```
+
 <span style="color: #FF8F00">**Exercise 5**: Try to make one RMarkdown file and knit it into a PDF.
 
+Note: If you put the .Rmd file that you want to knit into PDF in the same folder as your _site.yml, the .Rmd will be knitted into an html file because the yaml header in the _site.yml overrides the the ymal header in .Rmd files if they are in the same directory. <br> Hence, you need to create another script folder for the Rmd files that you want to knit into PDFs.
 
 # Useful links
 ## For RMarkdown
