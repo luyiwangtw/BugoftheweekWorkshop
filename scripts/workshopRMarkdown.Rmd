@@ -39,11 +39,24 @@ example 1 - [Visual models](https://luyiwangtw.github.io/LongWavelengthSensitivi
 
 example 2 - [Heating rate](https://lospinarozo.github.io/PrettyCoolBeetlesCodeAndData/)
 
+```{r xaringanExtra-clipboard, echo=FALSE}
+library(xaringanExtra)
+htmltools::tagList(
+  xaringanExtra::use_clipboard(
+    button_text = "<i class=\"fa fa-clipboard\"></i>",
+    success_text = "<i class=\"fa fa-check\" style=\"color: #90BE6D\"></i>",
+  ),
+  rmarkdown::html_dependency_font_awesome()
+)
+
+```
+
 ## Details {.tabset .tabset-fade .tabset-pills}
 
 Let's take a closer look what we can have in a website
 
 ### 1. Header 
+
 ```{r, echo = FALSE, out.width = '100%'}
 knitr::include_graphics("../images/header.png")
 ```
@@ -216,9 +229,15 @@ knitr::include_graphics("../images/RMarkdown PDF.png")
 
 However, there are some difference in syntax between the two formats and some functions are available for html output but not for PDF one, e.g. tabs, code buttons. So they are not completely compatible.
 
-
 ```{r eval=FALSE, include=TRUE}
 output: pdf_document
+```
+
+To knit an RMkarkdown into PDF,you will need to install LaTeX on you computer. The simplest way is to install  [TinyTeX](https://yihui.name/tinytex/) and you can run the following code from [here](https://bookdown.org/yihui/rmarkdown/installation.html) in R to install it.
+
+```{r eval=FALSE, include=TRUE}
+install.packages('tinytex')
+tinytex::install_tinytex()
 ```
 
 <span style="color: #FF8F00">**Exercise 5**: Try to make one RMarkdown file and knit it into a PDF.
