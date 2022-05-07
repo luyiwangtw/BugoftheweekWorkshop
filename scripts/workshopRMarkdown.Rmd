@@ -197,6 +197,7 @@ output:
     number_sections: false  #  number sections at each table header
     theme: flatly # theme for fonts and colours
     highlight: tango # different theme for the appearance of the code
+    code_folding: hide #  buttons to show/hide the code
 output_dir: "../docs"
 ```
 
