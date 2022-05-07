@@ -77,10 +77,12 @@ knitr::include_graphics("../images/show code.png")
 ```
 
 ## Essentials Files 
-There are two files you need to have to publish a webpage:
+There are two files you need with the exact same file names to publish a webpage:
 
 1. index.html: default homepage
-2. _site.yml:  essential if you want to have more than one page on your site. It provides the global YAML header for the site.
+2. _site.yml:  essential **if** you want to have **more than one page** on your site. It provides the global YAML header for the site. 
+
+Note: If you want only one page like [this example](https://lospinarozo.github.io/PrettyCoolBeetlesCodeAndData/), you only need index.html and do not need the _site.yml. But remember that you need to set the appearance in the yaml header of the index.Rmd because you do not have the _site.yml in this case.
 
 
 <span style="color: #FF8F00">**Exercise 1**: Copy the [Website repo](https://github.com/bugoftheweek/Webpage/tree/main) from Bug of the week to your own GitHub. 
